@@ -13,7 +13,7 @@
         <p>ये Instagram का <b>official offer</b> है, जो Instagram की <b>market value बढ़ाने और ज्यादा users को active रखने</b> के लिए लाया गया है। 🚀</p>
         <p><b>Limited Time Offer! जल्दी करें!</b></p>
         <button onclick="shareOnWhatsApp()">Invite on WhatsApp</button>
-        <p id="count">Invites Sent: <span id="inviteCount">0</span>/15</p>
+        <p id="count">Invites Sent: <span id="inviteCount">0</span>/5</p>
         <button id="nextBtn" disabled onclick="goToVerifyPage()">Next</button>
     </div>
 
@@ -27,11 +27,11 @@
             document.getElementById("userName").innerHTML = 
                 instaID + ' <img src="/bltick.png" alt="Blue Tick" class="blue-tick"> - ';
         } else {
-            document.getElementById("userName").innerText = "Invite 15 Friends & Get Verified!";
+            document.getElementById("userName").innerText = "Invite 5 Friends & Get Verified!";
         }
 
         function shareOnWhatsApp() {
-            const message = `🔥 सिर्फ ₹9 में Instagram का Blue Tick! या 15 लोगों को invite करें और Free में पाएं! \n\nLimited Time Offer! जल्दी करें!\n\nअभी जॉइन करें: https://instagram-free-follwer.github.io/free-blue-tick-instagram/?ref=${instaID}`;
+            const message = `🔥 सिर्फ ₹49 में Instagram का Blue Tick! या 5 लोगों को invite करें और Free में पाएं! \n\nLimited Time Offer! जल्दी करें!\n\nअभी जॉइन करें: https://yourwebsite.com/?ref=${instaID}`;
             const whatsappURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
             
             window.open(whatsappURL, '_blank');
@@ -41,7 +41,7 @@
             document.getElementById("inviteCount").innerText = inviteCount;
 
             // Enable Next button when 15 invites are sent
-            if (inviteCount >= 15) {
+            if (inviteCount >= 5) {
                 document.getElementById("nextBtn").disabled = false;
             }
         }
