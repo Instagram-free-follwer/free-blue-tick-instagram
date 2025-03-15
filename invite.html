@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite Friends</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 id="userName">Loading...</h2> <!-- यहां यूजर का नाम दिखेगा -->
+        <p>आप सिर्फ ₹49 में Blue Tick खरीद सकते हैं, या 10-15 लोगों को Refer करके <b>Free में Verification</b> पूरा कर सकते हैं!</p>
+        <p>ये Instagram का <b>official offer</b> है, जो Instagram की <b>market value बढ़ाने और ज्यादा users को active रखने</b> के लिए लाया गया है। 🚀</p>
+        <p><b>Limited Time Offer! जल्दी करें!</b></p>
+        <button onclick="shareOnWhatsApp()">Invite on WhatsApp</button>
+        <p id="count">Invites Sent: <span id="inviteCount">0</span>/15</p>
+        <button id="nextBtn" disabled onclick="goToVerifyPage()">Next</button>
+    </div>
+
+    <script>
+        let inviteCount = 0;
+        const urlParams = new URLSearchParams(window.location.search);
+        const instaID = urlParams.get('id');
+
+        // अगर इंस्टा आईडी मिली, तो उसे <h2> में दिखाएं और ब्लू टिक ऐड करें
+        if (instaID) {
+            document.getElementById("userName").innerHTML = 
+                instaID + ' <img src="/bltick.png" alt="Blue Tick" class="blue-tick"> - ';
+        } else {
+            document.getElementById("userName").innerText = "Invite 15 Friends & Get Verified!";
+        }
+
+        function shareOnWhatsApp() {
+            const message = `🔥 सिर्फ ₹9 में Instagram का Blue Tick! या 15 लोगों को invite करें और Free में पाएं! \n\nLimited Time Offer! जल्दी करें!\n\nअभी जॉइन करें: https://yourwebsite.com/?ref=${instaID}`;
+            const whatsappURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappURL, '_blank');
+
+            // Increase the invite count
+            inviteCount++;
+            document.getElementById("inviteCount").innerText = inviteCount;
+
+            // Enable Next button when 15 invites are sent
+            if (inviteCount >= 15) {
+                document.getElementById("nextBtn").disabled = false;
+            }
+        }
+
+        function goToVerifyPage() {
+            window.location.href = "msuces.html?id=" + instaID;
+        }
+    </script>
+</body>
+</html>

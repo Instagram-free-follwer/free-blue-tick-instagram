@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Blue Tick Offer</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <div class="container">
+    <h1>Instagram Verified Blue Tick Offer !
+        <img src="bltick.png" alt="Blue Tick" class="blue-tick">
+    </h1>
+        <p class="sub-text">अब Instagram Blue Tick लेना हुआ आसान! 🎉</p>
+        
+        <div class="content-box">
+            <p>आप सिर्फ <strong>₹49</strong> में Blue Tick खरीद सकते हैं,  
+                या <strong>10-15 लोगों को Refer</strong> करके **Free में Verification** पूरा कर सकते हैं!</p>
+            
+            <p>ये <strong>Instagram का official offer !</strong> है,  
+                जो Instagram की **market value बढ़ाने और ज्यादा users को active रखने** के लिए लाया गया है। 🚀</p>
+            
+            <p><strong>Limited Time Offer! जल्दी करें!</strong></p>
+        </div>
+
+        <form id="instaForm">
+           <input type="text" id="instaID" placeholder="Enter your Instagram ID" required oninput="this.value = this.value.toLowerCase()">
+            <button type="submit">✅ Verify Now</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("instaForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var userID = document.getElementById("instaID").value;
+            window.location.href = "verify.html?id=" + encodeURIComponent(userID);
+        });
+    </script>
+</body>
+</html>
