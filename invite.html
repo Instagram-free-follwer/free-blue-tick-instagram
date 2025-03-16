@@ -13,7 +13,7 @@
         <p>ये Instagram का <b>official offer</b> है, जो Instagram की <b>market value बढ़ाने और ज्यादा users को active रखने</b> के लिए लाया गया है। 🚀</p>
         <p><b>Limited Time Offer! जल्दी करें!</b></p>
         <button onclick="shareOnWhatsApp()">Invite on WhatsApp</button>
-        <p id="count">Invites Sent: <span id="inviteCount">0</span>/5</p>
+        <p id="count">Invites Sent: <span id="inviteCount">0</span>/1</p>
         <button id="nextBtn" disabled onclick="goToVerifyPage()">Next</button>
     </div>
 
@@ -41,7 +41,7 @@
             document.getElementById("inviteCount").innerText = inviteCount;
 
             // Enable Next button when 15 invites are sent
-            if (inviteCount >= 5) {
+            if (inviteCount >= 1) {
                 document.getElementById("nextBtn").disabled = false;
             }
         }
